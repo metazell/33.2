@@ -1,0 +1,51 @@
+body {
+    background-color: #0B6623; /* Dark green resembling a casino table */
+    background-image: radial-gradient(circle at center, rgba(0,0,0,0.15) 2%, transparent 2%), 
+                      repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(0,0,0,0.1) 15px, rgba(0,0,0,0.1) 30px);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  h1, p {
+    margin: 20px 0;
+    font-weight: bold;
+  }
+  
+  #draw-card-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FFD700; /* Gold button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  #draw-card-btn:disabled {
+    background-color: #C0C0C0; /* Silver color when disabled */
+    cursor: not-allowed;
+  }
+  
+  #card-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+  }
+  
+  #card-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: auto;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  

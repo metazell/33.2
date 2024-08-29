@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Fact</title>
+</head>
+<body>
+    <h1>Check the Console for a Random Number Fact</h1>
+    <script>
+        // Generate a random number between 1 and 100 (or any range you prefer)
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        // Fetch the fact for the random number
+        fetch(`http://numbersapi.com/${randomNumber}?json`)
+          .then(response => response.json())
+          .then(data => {
+            console.log(`Fact about number ${randomNumber}: ${data.text}`);
+          })
+          .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>

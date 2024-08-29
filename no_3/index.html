@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Facts About Number 9</title>
+</head>
+<body>
+    <h1>Four Facts About the Number 9</h1>
+    <script>
+        const url = 'http://numbersapi.com/9?json';
+
+        // Create an array of 4 fetch requests
+        const requests = [
+          fetch(url),
+          fetch(url),
+          fetch(url),
+          fetch(url)
+        ];
+
+        // Use Promise.all to handle all fetch requests
+        Promise.all(requests)
+          .then(responses => Promise.all(responses.map(response => response.json())))
+          .then(dataArray => {
+            const factsContainer = document.createElement('div');
+            dataArray.forEach(data => {
+              const fact = document.createElement('p');
+              fact.textContent = data.text;
+              factsContainer.appendChild(fact);
+            });
+            document.body.appendChild(factsContainer);
+          })
+          .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
